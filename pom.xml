@@ -64,11 +64,6 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>5.3.23</version> 
-		</dependency>
 	</dependencies>
 
 	<build>
