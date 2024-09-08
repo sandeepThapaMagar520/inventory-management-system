@@ -34,12 +34,7 @@
       </nav>
       <!-- nav bar end -->
 
-      <div th:if="${session.message}">
-        <div class="alert alert-success" role="alert" th:text="${session.getAttribute(message)}">
-          
-        </div>
-        <th:block th:text="${#session.removeAttribute('message')}"> </th:block>
-      </div>
+      
 
 
       <div class="container p-5">

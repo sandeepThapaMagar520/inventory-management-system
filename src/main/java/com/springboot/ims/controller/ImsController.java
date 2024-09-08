@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.springboot.ims.entity.Product;
 import com.springboot.ims.service.ProductService;
 
-import jakarta.servlet.http.HttpSession;
-
 @Controller
 public class ImsController {
     @Autowired
@@ -27,10 +25,9 @@ public class ImsController {
     }
 
     @PostMapping("/addProduct")
-    public String addProduct(@ModelAttribute Product product, HttpSession session){
-        System.out.println("product" + product);
+    public String addProduct(@ModelAttribute Product product){
+
         productService.addProduct(product);
-        session.setAttribute("message", "Product added sucessfully!");
         return "redirect:/";
     }
 }
