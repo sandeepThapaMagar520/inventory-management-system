@@ -48,6 +48,13 @@ public class ImsController {
 
         model.addAttribute("product", productById);
         return "editProduct";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable int id, RedirectAttributes redirectAttributes){
+        productService.deleteProduct(id);
+        redirectAttributes.addFlashAttribute("deleteMessage", "Product deleted Sucessfully! ");
+        return "redirect:/";
 
     }
 }

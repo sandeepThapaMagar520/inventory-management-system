@@ -35,8 +35,9 @@
       <!-- nav bar end -->
 
       <div th:if="${successMessage != null}" class="alert alert-success" role="alert">[[${successMessage}]]</div>
+      <div th:if="${deleteMessage != null}" class="alert alert-danger" role="alert">[[${deleteMessage}]]</div>
         
-      </div>
+      
       
 
 
@@ -62,8 +63,8 @@
                 <td th:text="${product.costPrice}"></td>
                 <td th:text="${product.sellingPrice}"></td>
                 <td>
-                  <a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${product.id})}" ;>Edit</a>
-                    <a class="btn btn-sm btn-danger" th:href="@{/delete/{id=${product.id}}}">Delete</a>
+                  <a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${product.id})}";>Edit</a>
+                  <a class="btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${product.id})}" ;>Delete</a>
                 </td>
             </tr>
         </tbody>
