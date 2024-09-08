@@ -34,48 +34,39 @@
       </nav>
       <!-- nav bar end -->
 
+      <div th:if="${successMessage != null}" class="alert alert-success" role="alert">[[${successMessage}]]</div>
+        
+      </div>
       
 
 
       <div class="container p-5">
         <table class="table table-striped">
           <thead class="bg-primary text-white">
-            <tr>
+            <tr >
               <th scope="col">ID</th>
               <th scope="col">Product Name</th>
               <th scope="col">Switche</th>
               <th scope="col">Color</th>
               <th scope="col">Cost Price</th>
               <th scope="col">Selling Price</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
+            <tr th:each="product : ${allProduct}">
+                <th th:text="${product.id}"></th>
+                <td th:text="${product.productName}"></td>
+                <td th:text="${product.switche}"></td>
+                <td th:text="${product.color}"></td>
+                <td th:text="${product.costPrice}"></td>
+                <td th:text="${product.sellingPrice}"></td>
+                <td>
+                    <a class="btn btn-sm btn-primary">Edit</a>
+                    <a class="btn btn-sm btn-danger">Delete</a>
+                </td>
             </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-            </tr>
-          </tbody>
+        </tbody>
         </table>
       </div>
 
