@@ -21,10 +21,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="/add">Add Product</a>
+              <a class="nav-link active" href="#">Add Product</a>
             </li>
             
             
@@ -33,42 +33,43 @@
         </div>
       </nav>
       <!-- nav bar end -->
+    <div class="container p-5">
+      <div class="row">
+        <div class="col-md-7 offset-md-3">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="text-center text-primary">Add Product</h4>
 
-      <div th:if="${successMessage != null}" class="alert alert-success" role="alert">[[${successMessage}]]</div>
-        
+              <form th:action="@{/addProduct}" method="post" th:object="${product}">
+                <div class="form-group">
+                  <label>Enter the product name: </label> <input type="text" class="form-control" name="productName" th:value="${product.productName}" required>
+                </div>
+
+                <div class="form-group">
+                  <label>Enter the switche: </label> <input type="text" class="form-control" name="switche" th:value="${product.switche}" required>
+                </div>
+
+                <div class="form-group">
+                  <label>Enter the color: </label> <input type="text" class="form-control" name="color" th:value="${product.color}" required>
+                </div>
+
+                <div class="form-group">
+                  <label>Enter the cost price: </label> <input type="number" class="form-control" name="costPrice" th:value="${product.costPrice}" required>
+                </div>
+
+                <div class="form-group">
+                  <label>Enter the selling price: </label> <input type="number" class="form-control" name="sellingPrice" th:value="${product.sellingPrice}" >
+                </div>
+                
+                <button class="btn btn-primary btn-block">Add</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
       
-
-
-      <div class="container p-5">
-        <table class="table table-striped">
-          <thead class="bg-primary text-white">
-            <tr >
-              <th scope="col">ID</th>
-              <th scope="col">Product Name</th>
-              <th scope="col">Switche</th>
-              <th scope="col">Color</th>
-              <th scope="col">Cost Price</th>
-              <th scope="col">Selling Price</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr th:each="product : ${allProduct}">
-                <th th:text="${product.id}"></th>
-                <td th:text="${product.productName}"></td>
-                <td th:text="${product.switche}"></td>
-                <td th:text="${product.color}"></td>
-                <td th:text="${product.costPrice}"></td>
-                <td th:text="${product.sellingPrice}"></td>
-                <td>
-                  <a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${product.id})}" ;>Edit</a>
-                    <a class="btn btn-sm btn-danger" th:href="@{/delete/{id=${product.id}}}">Delete</a>
-                </td>
-            </tr>
-        </tbody>
-        </table>
-      </div>
 
 
     <!-- Optional JavaScript -->

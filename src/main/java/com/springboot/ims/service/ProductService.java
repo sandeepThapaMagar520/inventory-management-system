@@ -1,6 +1,7 @@
 package com.springboot.ims.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,14 @@ public class ProductService {
     public List<Product> getAllProduct(){
         return productRepository.findAll();
 
+    }
+
+    public Product getProductById(int id){
+        Optional<Product> productById=  productRepository.findById(id);
+        if(productById.isPresent()){
+            return productById.get();
+        }
+        return null;
     }
 
 }
