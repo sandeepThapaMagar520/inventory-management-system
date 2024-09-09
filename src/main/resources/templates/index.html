@@ -49,8 +49,10 @@
               <th scope="col">Product Name</th>
               <th scope="col">Switche</th>
               <th scope="col">Color</th>
+              <th scope="col">Stock</th>
               <th scope="col">Cost Price</th>
               <th scope="col">Selling Price</th>
+              <th scope="col">Sold</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -60,8 +62,10 @@
                 <td th:text="${product.productName}"></td>
                 <td th:text="${product.switche}"></td>
                 <td th:text="${product.color}"></td>
+                <td th:text="${product.stock}"></td>
                 <td th:text="${product.costPrice}"></td>
                 <td th:text="${product.sellingPrice}"></td>
+                <td th:text="${product.isSold}"></td>
                 <td>
                   <a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${product.id})}";>Edit</a>
                   <a class="btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${product.id})}" ;>Delete</a>

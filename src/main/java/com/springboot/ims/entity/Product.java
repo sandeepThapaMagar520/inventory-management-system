@@ -25,8 +25,10 @@ public class Product {
     private String productName;
     private String switche;
     private String color;
+    private int stock;
     private int costPrice;
     private int sellingPrice;
+    private String isSold;
 
 
 }

@@ -54,11 +54,19 @@
                 </div>
 
                 <div class="form-group">
+                  <label>Enter the Stock: </label> <input type="number" class="form-control" name="stock" th:value="${product.stock}" required>
+                </div>
+
+                <div class="form-group">
                   <label>Enter the cost price: </label> <input type="number" class="form-control" name="costPrice" th:value="${product.costPrice}" required>
                 </div>
 
                 <div class="form-group">
                   <label>Enter the selling price: </label> <input type="number" class="form-control" name="sellingPrice" th:value="${product.sellingPrice}" >
+                </div>
+
+                <div class="form-group">
+                  <label>Is sold: </label> <input type="text" class="form-control" name="isSold" th:value="${product.isSold}">
                 </div>
                 
                 <button class="btn btn-primary btn-block">Add</button>
