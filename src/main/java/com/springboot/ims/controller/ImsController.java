@@ -50,10 +50,18 @@ public class ImsController {
         return "editProduct";
     }
 
+
+    @PostMapping("/update")
+    public String updateProduct(@ModelAttribute Product prodcut, RedirectAttributes redirectAttributes){
+        productService.addProduct(prodcut);
+        redirectAttributes.addFlashAttribute("successMessage", "prodcut updated sucessfully!!");
+        return "redirect:/";
+    }
+
     @GetMapping("/delete/{id}")
     public String deleteProduct(@PathVariable int id, RedirectAttributes redirectAttributes){
         productService.deleteProduct(id);
-        redirectAttributes.addFlashAttribute("deleteMessage", "Product deleted Sucessfully! ");
+        redirectAttributes.addFlashAttribute("deleteMessage", "Product deleted Sucessfully!");
         return "redirect:/";
 
     }
