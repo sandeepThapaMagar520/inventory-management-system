@@ -1,7 +1,5 @@
 # Inventory Management System using Spring boot 
 
-## A fully functional IMS used for managing stocks 
-
 ### Framework: Spring boot, 
 ### Database: mySql 
 ### Front end: bootstrap 4
